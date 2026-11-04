@@ -6,8 +6,7 @@ Copia este contenido en un archivo `decisiones.md` en la carpeta `proyecto/` de 
 
 # Decisiones de mi sitio
 
-**Emprendimiento:** Fajardo Motors V **Fecha:** 25 de noviembre · **Última corrección:** pendiente (checkpoint del 18 de noviembre)
-
+**Emprendimiento:** Fajardo Motors V **Fecha:** 25 de noviembre · **Última corrección:** 
 ## 1. Plugins (10 pts)
 
 | # | Funcionalidad | Plugin | Gratis o de pago | Qué incluye la versión gratis | Probado hasta (WP) | Requiere PHP | ¿Funciona con tema propio? | Enlace a la ficha |
