@@ -79,6 +79,6 @@ gantt
 
 | Qué cambié | Qué había antes | Por qué | Evidencia (captura o commit) |
 |------------|-----------------|---------|------------------------------|
-| (se completa en el checkpoint) | | | |
+|  | | | |
 
-**Decisión:** Continúo con mi propuesta; la confirmo en el checkpoint del 18 de noviembre.
+**Decisión:**
