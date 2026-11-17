@@ -78,6 +78,6 @@ gantt
 
 | Qué cambié | Qué había antes | Por qué | Evidencia (captura o commit) |
 |------------|-----------------|---------|------------------------------|
-|  | | | |
+| Sin cambios | Sin cambios | | |
 
 **Decisión:**
