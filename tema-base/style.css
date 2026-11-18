@@ -368,6 +368,109 @@ a:hover { text-decoration: underline; }
 }
 
 /* ==========================================================
+   4.2 ENTRADAS DEL BLOG EN EL HOME (front-page.php)
+   ========================================================== */
+.seccion-blog-home {
+  padding: 4.5rem 0 5rem;
+}
+
+.blog-home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.tarjeta-blog-home {
+  background: #ffffff;
+  border: 1px solid var(--color-borde);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta-blog-home:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08);
+}
+
+.tarjeta-blog-img {
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--color-secundario);
+}
+
+.tarjeta-blog-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.tarjeta-blog-home:hover .tarjeta-blog-img img {
+  transform: scale(1.05);
+}
+
+.tarjeta-blog-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+  text-decoration: none;
+}
+
+.tarjeta-blog-cuerpo {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.tarjeta-blog-meta {
+  font-size: 0.85rem;
+  color: var(--color-texto-suave);
+  margin: 0 0 0.5rem;
+  font-weight: 500;
+}
+
+.tarjeta-blog-meta a {
+  color: var(--color-principal);
+  font-weight: 600;
+}
+
+.tarjeta-blog-titulo {
+  font-size: 1.25rem;
+  line-height: 1.35;
+  margin: 0 0 0.75rem;
+}
+
+.tarjeta-blog-titulo a {
+  color: #0f172a;
+  text-decoration: none;
+}
+
+.tarjeta-blog-titulo a:hover {
+  color: var(--color-principal);
+  text-decoration: underline;
+}
+
+.tarjeta-blog-extracto {
+  font-size: 0.93rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.tarjeta-blog-extracto p {
+  margin: 0;
+}
+
+/* ==========================================================
    5. ENTRADA DE BLOG INDIVIDUAL (single.php)
    ========================================================== */
 .seccion { padding: 3rem 0; }

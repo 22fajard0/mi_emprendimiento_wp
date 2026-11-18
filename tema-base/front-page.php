@@ -143,25 +143,75 @@ get_header();
 	</div>
 </section>
 
-<!-- SECCIÓN 3: últimas entradas del blog -->
-<section class="seccion">
+<!-- SECCIÓN 3: Últimas entradas del blog y consejos -->
+<section class="seccion seccion-blog-home">
 	<div class="contenedor">
-		<h2>Últimas entradas</h2>
+		<div class="seccion-encabezado">
+			<span class="seccion-tagline">Blog y Guías</span>
+			<h2 class="seccion-titulo">Consejos para comprar tu auto usado</h2>
+			<p class="seccion-subtitulo">
+				Revisa nuestras guías para elegir seguro, entender la inspección mecánica y transferir tu vehículo sin complicaciones.
+			</p>
+		</div>
+
 		<?php
-		$ultimas = new WP_Query( array( 'posts_per_page' => 3 ) );
-		if ( $ultimas->have_posts() ) :
-			while ( $ultimas->have_posts() ) :
-				$ultimas->the_post();
-				?>
-				<article class="entrada">
-					<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-					<?php the_excerpt(); ?>
-				</article>
-				<?php
-			endwhile;
-			wp_reset_postdata();
-		endif;
+		$ultimas = new WP_Query( array(
+			'posts_per_page'      => 3,
+			'ignore_sticky_posts' => 1,
+		) );
 		?>
+
+		<?php if ( $ultimas->have_posts() ) : ?>
+			<div class="blog-home-grid">
+				<?php
+				while ( $ultimas->have_posts() ) :
+					$ultimas->the_post();
+					?>
+					<article id="post-<?php the_ID(); ?>" <?php post_class( 'tarjeta-blog-home' ); ?>>
+						<?php if ( has_post_thumbnail() ) : ?>
+							<a href="<?php the_permalink(); ?>" class="tarjeta-blog-img" tabindex="-1" aria-hidden="true">
+								<?php the_post_thumbnail( 'medium_large' ); ?>
+							</a>
+						<?php else : ?>
+							<a href="<?php the_permalink(); ?>" class="tarjeta-blog-img tarjeta-blog-placeholder" tabindex="-1" aria-hidden="true">
+								<span>📰</span>
+							</a>
+						<?php endif; ?>
+
+						<div class="tarjeta-blog-cuerpo">
+							<p class="tarjeta-blog-meta">
+								<span class="meta-fecha"><?php echo esc_html( get_the_date() ); ?></span>
+								<span class="meta-separador">·</span>
+								<span class="meta-cat"><?php the_category( ', ' ); ?></span>
+							</p>
+
+							<h3 class="tarjeta-blog-titulo">
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+							</h3>
+
+							<div class="tarjeta-blog-extracto">
+								<?php the_excerpt(); ?>
+							</div>
+
+							<div class="tarjeta-blog-accion">
+								<a href="<?php the_permalink(); ?>" class="enlace-leer-mas">
+									Leer artículo &rarr;
+								</a>
+							</div>
+						</div>
+					</article>
+				<?php endwhile; wp_reset_postdata(); ?>
+			</div>
+		<?php else : ?>
+			<div class="archivo-vacio">
+				<h3>Próximamente nuevas guías</h3>
+				<p>Estamos redactando consejos y artículos para ayudarte a comprar tu próximo auto con tranquilidad.</p>
+			</div>
+		<?php endif; ?>
+
+		<div class="seccion-cta-final">
+			<a href="<?php echo esc_url( home_url( '/blog' ) ); ?>" class="boton boton-secundario">Ver todos los artículos del blog</a>
+		</div>
 	</div>
 </section>
 
