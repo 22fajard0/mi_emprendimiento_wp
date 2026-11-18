@@ -1,21 +1,25 @@
 /*
-Theme Name: Mi Tema Base
-Description: Tema en blanco para el curso Sitios Web y Landing Pages. Cambia el nombre, la descripción y el autor.
-Author: Tu nombre
+Theme Name: Fajardo Motors V
+Description: Tema personalizado para la automotora de autos usados Fajardo Motors V.
+Author: Fajardo
 Version: 0.1
-Text Domain: mi-tema
+Text Domain: fajardo-motors
 */
 
 /* ==========================================================
-   1. VARIABLES — copia aquí los colores y tipografías de tu DESIGN.md
+   1. VARIABLES — Colores de marca y tipografías
    ========================================================== */
 :root {
   --color-fondo: #ffffff;
-  --color-texto: #1f2933;
-  --color-principal: #2563eb;   /* TODO: color de marca */
-  --color-secundario: #f1f5f9;  /* TODO: color de apoyo */
-  --fuente-texto: system-ui, -apple-system, "Segoe UI", sans-serif;  /* TODO: tipografía */
+  --color-texto: #1f2937;
+  --color-texto-suave: #64748b;
+  --color-principal: #1d4ed8;       /* Azul automotriz confiable */
+  --color-principal-hover: #1e40af;
+  --color-secundario: #f1f5f9;      /* Gris claro de apoyo */
+  --color-borde: #e2e8f0;
+  --fuente-texto: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --ancho-contenido: 1100px;
+  --ancho-lectura: 760px;          /* Ancho óptimo de lectura para las entradas */
   --espacio: 1.5rem;
 }
 
@@ -33,7 +37,8 @@ body {
 }
 
 img { max-width: 100%; height: auto; }
-a { color: var(--color-principal); }
+a { color: var(--color-principal); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
 .contenedor {
   max-width: var(--ancho-contenido);
@@ -44,37 +49,345 @@ a { color: var(--color-principal); }
 /* ==========================================================
    3. HEADER Y MENÚ
    ========================================================== */
-.sitio-header { background: var(--color-secundario); padding: 1rem 0; }
+.sitio-header { background: var(--color-secundario); padding: 1rem 0; border-bottom: 1px solid var(--color-borde); }
 .sitio-header .contenedor { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-.sitio-titulo { font-size: 1.5rem; font-weight: 700; text-decoration: none; }
+.sitio-titulo { font-size: 1.5rem; font-weight: 700; text-decoration: none; color: var(--color-texto); }
+.sitio-titulo:hover { text-decoration: none; }
 .menu-principal { list-style: none; display: flex; gap: 1.25rem; margin: 0; padding: 0; flex-wrap: wrap; }
-.menu-principal a { text-decoration: none; }
+.menu-principal a { text-decoration: none; color: var(--color-texto); font-weight: 500; }
+.menu-principal a:hover { color: var(--color-principal); }
 
 /* ==========================================================
-   4. CONTENIDO (home, entradas, páginas)
+   4. ENTRADA DE BLOG INDIVIDUAL (single.php)
    ========================================================== */
 .seccion { padding: 3rem 0; }
 .seccion-destacada { background: var(--color-secundario); }
-.entrada { margin-bottom: 2.5rem; }
-.entrada-meta { font-size: 0.9rem; opacity: 0.75; }
 
+/* Ancho del texto optimizado para lectura cómoda */
+.entrada-individual {
+  max-width: var(--ancho-lectura);
+  margin: 0 auto 3rem;
+}
+
+.entrada-header {
+  margin-bottom: 1.75rem;
+}
+
+/* Tamaño y jerarquía del título */
+.entrada-titulo {
+  font-size: clamp(1.85rem, 4vw, 2.4rem);
+  line-height: 1.25;
+  color: #0f172a;
+  margin: 0 0 0.75rem;
+  font-weight: 700;
+}
+
+/* Metadatos (fecha, categorías) */
+.entrada-meta {
+  font-size: 0.95rem;
+  color: var(--color-texto-suave);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.meta-separador {
+  color: #cbd5e1;
+}
+
+.entrada-meta a {
+  color: var(--color-principal);
+  font-weight: 500;
+}
+
+/* Imagen destacada del vehículo / artículo */
+.entrada-imagen-destacada {
+  margin: 1.75rem 0 2.25rem;
+}
+
+.entrada-imagen-destacada img {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+/* Contenido del texto y espacio entre párrafos */
+.entrada-contenido {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: #334155;
+}
+
+.entrada-contenido p {
+  margin: 0 0 1.5rem; /* Espacio entre párrafos */
+}
+
+.entrada-contenido h2,
+.entrada-contenido h3 {
+  color: #0f172a;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.entrada-contenido ul,
+.entrada-contenido ol {
+  margin: 0 0 1.5rem 1.25rem;
+  padding: 0;
+}
+
+.entrada-contenido li {
+  margin-bottom: 0.5rem;
+}
+
+.entrada-contenido blockquote {
+  border-left: 4px solid var(--color-principal);
+  margin: 1.5rem 0;
+  padding: 0.75rem 1.25rem;
+  background: var(--color-secundario);
+  font-style: italic;
+  color: #475569;
+}
+
+/* Bloque de llamado a la acción (CTA) para Fajardo Motors V */
+.entrada-cta-fajardo {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: var(--color-secundario);
+  border-left: 5px solid var(--color-principal);
+  border-radius: 8px;
+}
+
+.entrada-cta-fajardo h3 {
+  margin: 0 0 0.5rem;
+  color: #0f172a;
+  font-size: 1.35rem;
+}
+
+.entrada-cta-fajardo p {
+  margin: 0 0 1.25rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Botones */
 .boton {
   display: inline-block;
   background: var(--color-principal);
-  color: #fff;
+  color: #ffffff;
   padding: 0.75rem 1.5rem;
   border-radius: 6px;
   text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.boton:hover {
+  background: var(--color-principal-hover);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Comentarios */
+.comments-area {
+  max-width: var(--ancho-lectura);
+  margin: 2rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-borde);
 }
 
 /* ==========================================================
-   5. FOOTER
+   5. LISTADO DE CATEGORÍAS Y ARCHIVOS (archive.php)
    ========================================================== */
-.sitio-footer { background: var(--color-secundario); padding: 2rem 0; margin-top: 3rem; font-size: 0.9rem; }
+.archivo-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+}
+
+.archivo-titulo {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  color: #0f172a;
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+}
+
+.archivo-descripcion {
+  font-size: 1.05rem;
+  color: var(--color-texto-suave);
+  line-height: 1.6;
+}
+
+.archivo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+/* Tarjeta individual de artículo en el listado */
+.tarjeta-entrada {
+  background: #ffffff;
+  border: 1px solid var(--color-borde);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta-entrada:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.tarjeta-imagen {
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--color-secundario);
+}
+
+.tarjeta-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.tarjeta-entrada:hover .tarjeta-imagen img {
+  transform: scale(1.04);
+}
+
+.tarjeta-cuerpo {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.tarjeta-meta {
+  font-size: 0.85rem;
+  color: var(--color-texto-suave);
+  margin: 0 0 0.5rem;
+  font-weight: 500;
+}
+
+.tarjeta-titulo {
+  font-size: 1.25rem;
+  line-height: 1.35;
+  margin: 0 0 0.75rem;
+}
+
+.tarjeta-titulo a {
+  color: #0f172a;
+  text-decoration: none;
+}
+
+.tarjeta-titulo a:hover {
+  color: var(--color-principal);
+  text-decoration: none;
+}
+
+.tarjeta-extracto {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.tarjeta-extracto p {
+  margin: 0;
+}
+
+.enlace-leer-mas {
+  font-weight: 600;
+  color: var(--color-principal);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.enlace-leer-mas:hover {
+  text-decoration: underline;
+}
+
+/* Paginación */
+.archivo-paginacion {
+  margin-top: 2rem;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.page-numbers {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  padding: 0 0.75rem;
+  border-radius: 6px;
+  border: 1px solid var(--color-borde);
+  background: #ffffff;
+  color: var(--color-texto);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.page-numbers.current {
+  background: var(--color-principal);
+  color: #ffffff;
+  border-color: var(--color-principal);
+}
+
+.page-numbers:hover:not(.current) {
+  background: var(--color-secundario);
+  border-color: #cbd5e1;
+  text-decoration: none;
+}
+
+/* Estado sin publicaciones */
+.archivo-vacio {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: var(--color-secundario);
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.archivo-vacio h2 {
+  margin-top: 0;
+  color: #0f172a;
+}
+
+.archivo-vacio p {
+  color: #475569;
+  margin-bottom: 1.5rem;
+}
 
 /* ==========================================================
-   6. RESPONSIVE
+   6. FOOTER
+   ========================================================== */
+.sitio-footer { background: var(--color-secundario); padding: 2rem 0; margin-top: 3rem; font-size: 0.9rem; border-top: 1px solid var(--color-borde); }
+
+/* ==========================================================
+   7. RESPONSIVE
    ========================================================== */
 @media (max-width: 700px) {
   .sitio-header .contenedor { flex-direction: column; align-items: flex-start; }
+  .entrada-contenido { font-size: 1.02rem; }
+  .entrada-cta-fajardo { padding: 1.5rem; }
+  .archivo-grid { grid-template-columns: 1fr; }
 }
