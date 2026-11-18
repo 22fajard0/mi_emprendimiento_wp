@@ -1,23 +1,52 @@
 <?php
 /**
- * front-page.php — el HOME del sitio.
- * Aquí reconstruyes las secciones de tu prototipo, de arriba hacia abajo.
+ * front-page.php — el HOME del sitio (Fajardo Motors V).
  * Se muestra si en Ajustes > Lectura eliges "Una página estática" como página de inicio.
  */
 get_header();
 ?>
 
-<!-- SECCIÓN 1: portada (imagen principal, título y botón) -->
-<section class="seccion">
+<!-- SECCIÓN 1: Portada Hero (promesa de marca, llamada a la acción e imagen) -->
+<section class="seccion seccion-hero">
 	<div class="contenedor">
-		<h1>TODO: titular de tu sitio</h1>
-		<p>TODO: una frase que explique qué ofreces y a quién.</p>
-		<a class="boton" href="#">TODO: llamada a la acción</a>
+		<div class="hero-grid">
+			<div class="hero-contenido">
+				<span class="hero-badge">Automotora en la V Región · Autos Usados Garantizados</span>
+				<h1 class="hero-titulo">Compras tranquilo: autos usados seleccionados y garantizados</h1>
+				<p class="hero-subtitulo">
+					En <strong>Fajardo Motors V</strong> cada vehículo pasa por una inspección técnica rigurosa en más de 100 puntos. Llévate tu auto con 3 meses de garantía, documentación al día y opciones de financiamiento.
+				</p>
+				<div class="hero-botones">
+					<a class="boton boton-principal" href="#destacados">Ver autos en stock</a>
+					<a class="boton boton-whatsapp" href="https://wa.me/56912345678" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
+				</div>
+				<div class="hero-puntos">
+					<span>✓ Inspección de 100+ puntos</span>
+					<span>✓ 3 meses de garantía</span>
+					<span>✓ Transferencia inmediata</span>
+				</div>
+			</div>
+
+			<div class="hero-media">
+				<?php if ( file_exists( get_template_directory() . '/assets/img/hero-auto.png' ) ) : ?>
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/hero-auto.png" alt="Autos usados seleccionados en Fajardo Motors V" class="hero-img">
+				<?php elseif ( file_exists( get_template_directory() . '/assets/img/hero-auto.jpg' ) ) : ?>
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/hero-auto.jpg" alt="Autos usados seleccionados en Fajardo Motors V" class="hero-img">
+				<?php else : ?>
+					<div class="hero-placeholder">
+						<div class="placeholder-icono">🚘</div>
+						<h3>Fajardo Motors V</h3>
+						<p>Autos usados con garantía y certificación mecánica</p>
+						<span class="placeholder-nota">Coloca tu foto en assets/img/hero-auto.jpg</span>
+					</div>
+				<?php endif; ?>
+			</div>
+		</div>
 	</div>
 </section>
 
 <!-- SECCIÓN 2: destacados -->
-<section class="seccion seccion-destacada">
+<section id="destacados" class="seccion seccion-destacada">
 	<div class="contenedor">
 		<h2>TODO: destacados</h2>
 	</div>

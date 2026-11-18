@@ -73,7 +73,136 @@ a:hover { text-decoration: underline; }
 .menu-principal a:hover { color: var(--color-principal); text-decoration: none; }
 
 /* ==========================================================
-   4. ENTRADA DE BLOG INDIVIDUAL (single.php)
+   4. PORTADA / HERO (front-page.php)
+   ========================================================== */
+.seccion-hero {
+  padding: 4.5rem 0 4rem;
+  background: linear-gradient(180deg, var(--color-secundario) 0%, #ffffff 100%);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: #eff6ff;
+  color: var(--color-principal);
+  border: 1px solid #bfdbfe;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.35rem 0.9rem;
+  border-radius: 50px;
+  margin-bottom: 1.25rem;
+}
+
+.hero-titulo {
+  font-size: clamp(2.1rem, 4.5vw, 3.1rem);
+  line-height: 1.18;
+  color: #0f172a;
+  margin: 0 0 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.hero-subtitulo {
+  font-size: 1.12rem;
+  line-height: 1.7;
+  color: #475569;
+  margin: 0 0 2rem;
+}
+
+.hero-botones {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.boton-principal {
+  background: var(--color-principal);
+}
+
+.boton-principal:hover {
+  background: var(--color-principal-hover);
+}
+
+.boton-whatsapp {
+  background: #22c55e;
+  color: #ffffff;
+}
+
+.boton-whatsapp:hover {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+.hero-puntos {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.hero-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-img {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.15);
+  display: block;
+  object-fit: cover;
+}
+
+.hero-placeholder {
+  background: #ffffff;
+  border: 2px dashed #cbd5e1;
+  border-radius: 14px;
+  padding: 3.5rem 2rem;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+}
+
+.placeholder-icono {
+  font-size: 3.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero-placeholder h3 {
+  margin: 0 0 0.5rem;
+  color: var(--color-principal);
+  font-size: 1.35rem;
+}
+
+.hero-placeholder p {
+  color: #475569;
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+}
+
+.placeholder-nota {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  background: var(--color-secundario);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+}
+
+/* ==========================================================
+   5. ENTRADA DE BLOG INDIVIDUAL (single.php)
    ========================================================== */
 .seccion { padding: 3rem 0; }
 .seccion-destacada { background: var(--color-secundario); }
@@ -787,6 +916,18 @@ a:hover { text-decoration: underline; }
 /* ==========================================================
    8. RESPONSIVE
    ========================================================== */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+  .hero-botones,
+  .hero-puntos {
+    justify-content: center;
+  }
+}
+
 @media (max-width: 850px) {
   .footer-grid {
     grid-template-columns: 1fr;
