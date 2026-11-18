@@ -6,20 +6,27 @@ Version: 0.1
 Text Domain: fajardo-motors
 */
 
+/* Google Fonts: Poppins (Títulos) e Inter (Textos) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap');
+
 /* ==========================================================
-   1. VARIABLES — Colores de marca y tipografías
+   1. VARIABLES — Colores de marca y tipografías (Fajardo Motors V)
    ========================================================== */
 :root {
   --color-fondo: #ffffff;
-  --color-texto: #1f2937;
-  --color-texto-suave: #64748b;
-  --color-principal: #1d4ed8;       /* Azul automotriz confiable */
+  --color-fondo-alt: #f8fafc;
+  --color-texto: #0f172a;           /* Grafito oscuro para lectura nítida */
+  --color-texto-suave: #64748b;     /* Gris suave para metadatos y subtítulos */
+  --color-principal: #1d4ed8;       /* Azul automotriz de confianza */
   --color-principal-hover: #1e40af;
   --color-secundario: #f1f5f9;      /* Gris claro de apoyo */
+  --color-acento: #ea580c;          /* Naranja de llamado a la acción / cotizar */
+  --color-acento-hover: #c2410c;
   --color-borde: #e2e8f0;
-  --fuente-texto: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --ancho-contenido: 1100px;
-  --ancho-lectura: 760px;          /* Ancho óptimo de lectura para las entradas */
+  --fuente-titulos: 'Poppins', system-ui, sans-serif;
+  --fuente-texto: 'Inter', system-ui, -apple-system, sans-serif;
+  --ancho-contenido: 1150px;
+  --ancho-lectura: 760px;
   --espacio: 1.5rem;
 }
 
@@ -34,6 +41,12 @@ body {
   color: var(--color-texto);
   font-family: var(--fuente-texto);
   line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  color: var(--color-texto);
 }
 
 img { max-width: 100%; height: auto; }
