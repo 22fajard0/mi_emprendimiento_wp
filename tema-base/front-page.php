@@ -34,10 +34,13 @@ get_header();
 					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/hero-auto.jpg" alt="Autos usados seleccionados en Fajardo Motors V" class="hero-img">
 				<?php else : ?>
 					<div class="hero-placeholder">
-						<div class="placeholder-icono">🚘</div>
+						<?php if ( file_exists( get_template_directory() . '/assets/img/logo.png' ) ) : ?>
+							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/logo.png" alt="Fajardo Motors V" class="hero-logo-img">
+						<?php else : ?>
+							<div class="placeholder-icono">🚘</div>
+						<?php endif; ?>
 						<h3>Fajardo Motors V</h3>
 						<p>Autos usados con garantía y certificación mecánica</p>
-						<span class="placeholder-nota">Coloca tu foto en assets/img/hero-auto.jpg</span>
 					</div>
 				<?php endif; ?>
 			</div>
