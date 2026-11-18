@@ -45,10 +45,101 @@ get_header();
 	</div>
 </section>
 
-<!-- SECCIÓN 2: destacados -->
+<!-- SECCIÓN 2: Destacados (Autos destacados en stock) -->
 <section id="destacados" class="seccion seccion-destacada">
 	<div class="contenedor">
-		<h2>TODO: destacados</h2>
+		<div class="seccion-encabezado">
+			<span class="seccion-tagline">Selección semanal</span>
+			<h2 class="seccion-titulo">Autos usados destacados</h2>
+			<p class="seccion-subtitulo">
+				Unidades 100% inspeccionadas, con historial verificado y listas para entrega con la <strong>Garantía Fajardo</strong> de 3 meses.
+			</p>
+		</div>
+
+		<div class="autos-grid">
+			<!-- Auto 1 -->
+			<div class="auto-tarjeta">
+				<div class="auto-imagen-contenedor">
+					<span class="auto-badge-estado">Garantizado</span>
+					<div class="auto-imagen-placeholder">
+						<span class="auto-icono">🚙</span>
+					</div>
+				</div>
+				<div class="auto-info">
+					<span class="auto-categoria">SUV Familiar</span>
+					<h3 class="auto-titulo">Toyota RAV4 2.0 4x2</h3>
+					<div class="auto-detalles">
+						<span>2021</span>
+						<span>·</span>
+						<span>48.000 km</span>
+						<span>·</span>
+						<span>Automático</span>
+					</div>
+					<div class="auto-precio-caja">
+						<span class="auto-precio-etiqueta">Precio al contado</span>
+						<p class="auto-precio">$16.990.000</p>
+					</div>
+					<a href="<?php echo esc_url( home_url( '/contacto' ) ); ?>" class="boton boton-auto">Cotizar este auto</a>
+				</div>
+			</div>
+
+			<!-- Auto 2 -->
+			<div class="auto-tarjeta">
+				<div class="auto-imagen-contenedor">
+					<span class="auto-badge-estado">Único dueño</span>
+					<div class="auto-imagen-placeholder">
+						<span class="auto-icono">🚗</span>
+					</div>
+				</div>
+				<div class="auto-info">
+					<span class="auto-categoria">Sedán</span>
+					<h3 class="auto-titulo">Mazda 3 2.0 V High</h3>
+					<div class="auto-detalles">
+						<span>2022</span>
+						<span>·</span>
+						<span>34.000 km</span>
+						<span>·</span>
+						<span>Mecánico</span>
+					</div>
+					<div class="auto-precio-caja">
+						<span class="auto-precio-etiqueta">Precio al contado</span>
+						<p class="auto-precio">$14.490.000</p>
+					</div>
+					<a href="<?php echo esc_url( home_url( '/contacto' ) ); ?>" class="boton boton-auto">Cotizar este auto</a>
+				</div>
+			</div>
+
+			<!-- Auto 3 -->
+			<div class="auto-tarjeta">
+				<div class="auto-imagen-contenedor">
+					<span class="auto-badge-estado">Bajo consumo</span>
+					<div class="auto-imagen-placeholder">
+						<span class="auto-icono">🚘</span>
+					</div>
+				</div>
+				<div class="auto-info">
+					<span class="auto-categoria">Hatchback Urbano</span>
+					<h3 class="auto-titulo">Suzuki Swift 1.2 GLX</h3>
+					<div class="auto-detalles">
+						<span>2023</span>
+						<span>·</span>
+						<span>19.500 km</span>
+						<span>·</span>
+						<span>Mecánico</span>
+					</div>
+					<div class="auto-precio-caja">
+						<span class="auto-precio-etiqueta">Precio al contado</span>
+						<p class="auto-precio">$10.890.000</p>
+					</div>
+					<a href="<?php echo esc_url( home_url( '/contacto' ) ); ?>" class="boton boton-auto">Cotizar este auto</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="seccion-cta-final">
+			<p>¿Buscas una marca o modelo en particular?</p>
+			<a href="<?php echo esc_url( home_url( '/contacto' ) ); ?>" class="boton boton-secundario">Solicitar asesoría o cotizar tu vehículo</a>
+		</div>
 	</div>
 </section>
 

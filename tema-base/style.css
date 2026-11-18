@@ -202,6 +202,172 @@ a:hover { text-decoration: underline; }
 }
 
 /* ==========================================================
+   4.1 AUTOS DESTACADOS (front-page.php)
+   ========================================================== */
+.seccion-destacada {
+  background: var(--color-fondo-alt);
+  border-top: 1px solid var(--color-borde);
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.seccion-encabezado {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3rem;
+}
+
+.seccion-tagline {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--color-principal);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.seccion-titulo {
+  font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+  color: #0f172a;
+  margin: 0 0 0.75rem;
+}
+
+.seccion-subtitulo {
+  font-size: 1.05rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.autos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.auto-tarjeta {
+  background: #ffffff;
+  border: 1px solid var(--color-borde);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auto-tarjeta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.08);
+}
+
+.auto-imagen-contenedor {
+  position: relative;
+  height: 180px;
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auto-badge-estado {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--color-principal);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.auto-icono {
+  font-size: 3.5rem;
+}
+
+.auto-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.auto-categoria {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.auto-titulo {
+  font-size: 1.25rem;
+  color: #0f172a;
+  margin: 0.35rem 0 0.5rem;
+}
+
+.auto-detalles {
+  display: flex;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+  color: #64748b;
+  margin-bottom: 1.25rem;
+}
+
+.auto-precio-caja {
+  background: #f8fafc;
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.auto-precio-etiqueta {
+  font-size: 0.75rem;
+  color: #64748b;
+  display: block;
+}
+
+.auto-precio {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-principal);
+  margin: 0.15rem 0 0;
+}
+
+.boton-auto {
+  width: 100%;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+}
+
+.seccion-cta-final {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.seccion-cta-final p {
+  color: #475569;
+  font-size: 1.05rem;
+  margin: 0 0 1rem;
+}
+
+.boton-secundario {
+  background: #ffffff;
+  color: var(--color-principal);
+  border: 2px solid var(--color-principal);
+}
+
+.boton-secundario:hover {
+  background: var(--color-principal);
+  color: #ffffff;
+}
+
+/* ==========================================================
    5. ENTRADA DE BLOG INDIVIDUAL (single.php)
    ========================================================== */
 .seccion { padding: 3rem 0; }
