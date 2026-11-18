@@ -505,16 +505,159 @@ a:hover { text-decoration: underline; }
 }
 
 /* ==========================================================
-   6. FOOTER
+   6. PÁGINAS ESTÁTICAS Y FORMULARIOS (page.php)
+   ========================================================== */
+.pagina-individual {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.pagina-header {
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--color-secundario);
+  padding-bottom: 1rem;
+}
+
+.pagina-titulo {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  color: #0f172a;
+  margin: 0;
+  font-weight: 700;
+}
+
+.pagina-imagen-destacada {
+  margin: 1.5rem 0 2.5rem;
+}
+
+.pagina-imagen-destacada img {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+.pagina-contenido {
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: #334155;
+}
+
+.pagina-contenido p {
+  margin: 0 0 1.5rem;
+}
+
+.pagina-contenido h2 {
+  font-size: 1.6rem;
+  color: #0f172a;
+  margin: 2.25rem 0 1rem;
+}
+
+.pagina-contenido h3 {
+  font-size: 1.3rem;
+  color: #0f172a;
+  margin: 1.75rem 0 0.75rem;
+}
+
+.pagina-contenido ul,
+.pagina-contenido ol {
+  margin: 0 0 1.5rem 1.25rem;
+  padding: 0;
+}
+
+.pagina-contenido li {
+  margin-bottom: 0.5rem;
+}
+
+/* Formulario de contacto (Contact Form 7) */
+.wpcf7 {
+  margin-top: 2rem;
+  background: var(--color-secundario);
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid var(--color-borde);
+}
+
+.wpcf7 form p {
+  margin-bottom: 1.25rem;
+}
+
+.wpcf7 label {
+  display: block;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 0.35rem;
+  font-size: 0.95rem;
+}
+
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 input[type="tel"],
+.wpcf7 input[type="url"],
+.wpcf7 textarea,
+.wpcf7 select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  background: #ffffff;
+  color: var(--color-texto);
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.wpcf7 input:focus,
+.wpcf7 textarea:focus,
+.wpcf7 select:focus {
+  outline: none;
+  border-color: var(--color-principal);
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.15);
+}
+
+.wpcf7 textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.wpcf7 input[type="submit"] {
+  display: inline-block;
+  background: var(--color-principal);
+  color: #ffffff;
+  padding: 0.85rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.2s ease;
+}
+
+.wpcf7 input[type="submit"]:hover {
+  background: var(--color-principal-hover);
+}
+
+.wpcf7-response-output {
+  margin: 1.5rem 0 0 !important;
+  padding: 1rem !important;
+  border-radius: 6px !important;
+  font-weight: 500;
+}
+
+/* ==========================================================
+   7. FOOTER
    ========================================================== */
 .sitio-footer { background: var(--color-secundario); padding: 2rem 0; margin-top: 3rem; font-size: 0.9rem; border-top: 1px solid var(--color-borde); }
 
 /* ==========================================================
-   7. RESPONSIVE
+   8. RESPONSIVE
    ========================================================== */
 @media (max-width: 700px) {
   .sitio-header .contenedor { flex-direction: column; align-items: flex-start; }
-  .entrada-contenido { font-size: 1.02rem; }
-  .entrada-cta-fajardo { padding: 1.5rem; }
+  .entrada-contenido,
+  .pagina-contenido { font-size: 1.02rem; }
+  .entrada-cta-fajardo,
+  .wpcf7 { padding: 1.5rem; }
   .archivo-grid { grid-template-columns: 1fr; }
 }
