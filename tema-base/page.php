@@ -1,28 +1,16 @@
 <?php
 /**
- * page.php — Plantilla para páginas individuales (Quiénes somos, Contacto, Garantía, etc.)
- * Fajardo Motors V
+ * page.php — una página (Sobre nosotros, Contacto, etc.).
  */
 get_header();
 ?>
 
-<section class="seccion seccion-pagina">
+<section class="seccion">
 	<div class="contenedor">
 		<?php while ( have_posts() ) : the_post(); ?>
-			<article id="post-<?php the_ID(); ?>" <?php post_class( 'pagina-individual' ); ?>>
-				<header class="pagina-header">
-					<h1 class="pagina-titulo"><?php the_title(); ?></h1>
-				</header>
-
-				<?php if ( has_post_thumbnail() ) : ?>
-					<div class="pagina-imagen-destacada">
-						<?php the_post_thumbnail( 'large' ); ?>
-					</div>
-				<?php endif; ?>
-
-				<div class="pagina-contenido">
-					<?php the_content(); ?>
-				</div>
+			<article>
+				<h1><?php the_title(); ?></h1>
+				<?php the_content(); ?>
 			</article>
 		<?php endwhile; ?>
 	</div>
