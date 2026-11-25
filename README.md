@@ -1,4 +1,4 @@
-# [Nombre de tu emprendimiento] · Sitio WordPress
+# [Fajardo Motors V] · Sitio WordPress
 
 > **Este README es tuyo.** Complétalo mientras construyes tu sitio y borra las instrucciones entre paréntesis. Las instrucciones del proyecto están en [`indicaciones/README.md`](indicaciones/README.md).
 
